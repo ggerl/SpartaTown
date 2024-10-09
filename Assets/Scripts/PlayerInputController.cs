@@ -5,10 +5,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputController : Controller2D
 {
-    private Camera _camera;
+    private Camera camera;
     private void Awake()
     {
-        _camera = Camera.main;
+        camera = Camera.main;
     }
 
     public void OnMove(InputValue value)
@@ -19,7 +19,9 @@ public class PlayerInputController : Controller2D
 
     public void OnLook(InputValue value)
     {
-        Vector2 lookInput = value.Get<Vector2>().normalized;
-        CallLookEvent(lookInput);
+        Vector2 newaim = value.Get<Vector2>();
+        Vector2 worldPos = camera.ScreenToWorldPoint(newaim);
+        newaim = (worldPos - (Vector2)transform.position).normalized;
+        CallLookEvent(newaim); 
     }
 }
