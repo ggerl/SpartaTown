@@ -818,6 +818,7 @@ MonoBehaviour:
   player: {fileID: 0}
   playerData: {fileID: 0}
   PlayerName: 
+  PlayerPrefabs: {fileID: 6367799923931511068, guid: bb73182e731f8b7469730e452b524aba, type: 3}
 --- !u!1 &677476938
 GameObject:
   m_ObjectHideFlags: 0

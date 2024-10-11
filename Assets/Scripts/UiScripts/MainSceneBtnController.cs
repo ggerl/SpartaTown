@@ -5,14 +5,18 @@ using UnityEngine;
 
 public class MainSceneBtnController : MonoBehaviour
 {
-    [SerializeField] private PlayerData _playerData;
-    [SerializeField] private PlayerInputController playerInputController;
     [SerializeField] private GameObject selectPanel;
     [SerializeField] private GameObject nameChangePanel;
     [SerializeField] private TMP_InputField inputText;
-   
+    [SerializeField] private GameObject CurrentPlayerPanel;
+    private PlayerInputController playerInputController;
 
-    public void OnButtonClick()
+
+    private void Start()
+    {
+        playerInputController = GameManager.instance.player.GetComponent<PlayerInputController>();
+    }
+    public void CharacterChange(PlayerData _playerData)
     {
         GameManager.instance.playerData = _playerData;
         playerInputController.PlayerAnimChange("Player_Idle", GameManager.instance.playerData.clip_Idle);
@@ -38,5 +42,18 @@ public class MainSceneBtnController : MonoBehaviour
         GameManager.instance.PlayerName = userName;
         playerInputController.DisplayPlayerName();
         nameChangePanel.SetActive(false);
+    }
+
+    public void OnCurretPlayerBtn()
+    {
+        Debug.Log("클릭되었습니다");
+        CurrentPlayerPanel.SetActive(true);
+
+    }
+
+    public void CloseCurrentPlayerBtn()
+    {
+        CurrentPlayerPanel.SetActive(false);
+
     }
 }

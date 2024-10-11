@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEditor.Animations;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    [SerializeField] private GameObject player;
+    public GameObject player;
     public PlayerData playerData;
     public string PlayerName = "";
+    public GameObject PlayerPrefabs;
 
     private void Awake()
     {
@@ -24,6 +27,13 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);    
         }
     }
+
+    public void CreatePlayer(Vector2 spawnPoint)
+    {
+        player = Instantiate(PlayerPrefabs, spawnPoint, Quaternion.identity);
+
+    }
+
 
  
 
