@@ -28980,8 +28980,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9db0a2d03d5e7df49a2f6c96e2b63fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerData: {fileID: 11400000, guid: 5f0d5f235d0da134bb775c8ac3db8b05, type: 2}
-  playerInputController: {fileID: 0}
   selectPanel: {fileID: 553017295}
   nameChangePanel: {fileID: 783876715}
   inputText: {fileID: 1296906148}
