@@ -10,6 +10,9 @@ public class MainSceneBtnController : MonoBehaviour
     [SerializeField] private TMP_InputField inputText;
     [SerializeField] private GameObject CurrentPlayerPanel;
     private PlayerInputController playerInputController;
+    [SerializeField] private MainSceneUiController uiController;
+    [SerializeField] private GameObject npcDialoguePanel;
+    [SerializeField] private GameObject DialoguePanel;
 
 
     private void Start()
@@ -19,6 +22,7 @@ public class MainSceneBtnController : MonoBehaviour
     public void CharacterChange(PlayerData _playerData)
     {
         GameManager.instance.playerData = _playerData;
+        playerInputController.PlayerSpriteChange();
         playerInputController.PlayerAnimChange("Player_Idle", GameManager.instance.playerData.clip_Idle);
         playerInputController.PlayerAnimChange("Player_Move", GameManager.instance.playerData.clip_Run);
         selectPanel.SetActive(false);
@@ -41,6 +45,7 @@ public class MainSceneBtnController : MonoBehaviour
         string userName = inputText.text;
         GameManager.instance.PlayerName = userName;
         playerInputController.DisplayPlayerName();
+        uiController.DisplayName();
         nameChangePanel.SetActive(false);
     }
 
@@ -55,5 +60,16 @@ public class MainSceneBtnController : MonoBehaviour
     {
         CurrentPlayerPanel.SetActive(false);
 
+    }
+
+    public void AcceptDialogueBtn()
+    {
+        npcDialoguePanel.SetActive(false);
+        DialoguePanel.SetActive(true);
+    }
+    
+    public void CloseDialogueBtn()
+    {
+        DialoguePanel.SetActive(false);
     }
 }

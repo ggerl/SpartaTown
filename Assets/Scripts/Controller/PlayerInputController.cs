@@ -43,7 +43,7 @@ public class PlayerInputController : Controller2D
         text.text = GameManager.instance.PlayerName;
     }
 
-    private void PlayerSpriteChange()
+    public void PlayerSpriteChange()
     {
         spriteRenderer.sprite = GameManager.instance.playerData.characterSprite;
     }
@@ -51,6 +51,6 @@ public class PlayerInputController : Controller2D
     public void PlayerAnimChange(string originalClipName, AnimationClip newClip)
     {
         animatorOverrideController[originalClipName] = newClip;
-
+        
     }
 }

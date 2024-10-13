@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public PlayerData playerData;
     public string PlayerName = "";
     public GameObject PlayerPrefabs;
+    public GameObject Npc;
 
     private void Awake()
     {

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BanditData
   m_EditorClassIdentifier: 
   Name: Bandit
-  characterSprite: {fileID: 1294432484, guid: 894cc47046bceb74781e51c10136b547, type: 3}
+  characterSprite: {fileID: 391271859, guid: 894cc47046bceb74781e51c10136b547, type: 3}
   animatorController: {fileID: 0}
   clip_Idle: {fileID: 7400000, guid: f072d35f5943e0b40946a268fd10c0e0, type: 2}
   clip_Run: {fileID: 7400000, guid: 89f869cf61a771e40bbc282a5c7add2f, type: 2}

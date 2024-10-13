@@ -60,11 +60,15 @@ public class StartSceneUiController : MonoBehaviour
 
     public void OnJoinBtn()
     {
+        if(playerName != null && 0 < playerName.Length && playerName.Length < 6) 
+        { 
         Debug.Log("Player Name: " + playerName);
         Debug.Log("Player Data: " + (_playerData != null ? "Not Null" : "Null"));
         GameManager.instance.PlayerName = playerName;
         GameManager.instance.playerData = _playerData;
         SceneManager.LoadScene("SampleScene");
+        }
+
     }
     
 
